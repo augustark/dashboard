@@ -1,0 +1,134 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+/*=== LAYOUT ===*/
+body {
+  /* width: 1400px; */
+
+  font-family: 'Poppins', sans-serif;
+
+  display: grid;
+  grid-template:  180px 1fr /  300px 1fr;
+  grid-template-areas: 
+    "dashboard header"
+    "dashboard main"
+  ;
+}
+
+.sidebar {
+  background: #06b6d4;
+  grid-area: dashboard;
+
+  /* display: grid;
+  grid-template-rows: 20% 50% 20%; */
+}
+
+.header {
+  background: whitesmoke;
+  grid-area: header;
+
+  display: grid;
+  grid-template: repeat(2, 1fr) / 70% 30%;
+  grid-template-areas: 
+    "search profile"
+    "user post"
+  ;
+}
+
+.main-content {
+  background: lightgray;
+  grid-area: main;
+
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 300px ;
+  grid-template-areas: 
+    "projects annoucements"
+    "projects trending"
+  ;
+}
+
+/*=== Sidebar Section ===*/
+
+/*<== Logo */
+.logo {
+  display: grid;
+  grid-template: auto/ 22% 78%;
+  gap: 1em;
+  place-items: center;
+  margin: 1em auto;
+}
+
+.logo > img {
+  width: 30px;
+  justify-self: end;
+}
+
+.logo > h1 {
+  justify-self: start;
+  color: #FFF;
+  letter-spacing: -1.5px;
+}
+
+/* <== Features & Settings */
+.features, .settings {
+  display: grid;
+  grid-template: repeat(6, 1fr) / 20% 1fr;
+  gap: 1em 1.5em;
+  place-items: center;
+  margin-top: 3em;
+}
+
+.features > img, .settings > img {
+  width: 20px;
+  justify-self: end;
+}
+
+.features > a, .settings > a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #FFF;
+  justify-self: start;
+}
+
+
+/*=== Header Section ===*/
+.search-section {
+  grid-area: search;  
+}
+
+.profile-section {
+  grid-area: profile;
+}
+
+.user-section {
+  grid-area: user;
+}
+
+.post-buttons-section {
+  grid-area: post;
+}
+
+/* Main Content Section */
+.projects-section {
+  grid-area: projects
+}
+
+.announcements-section {
+  grid-area: annoucements;
+}
+
+.trending-section {
+  grid-area: trending;
+}
